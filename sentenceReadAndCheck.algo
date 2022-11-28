@@ -1,0 +1,45 @@
+ALGORITHM sentence_read_and_check
+VAR
+    sentence : STRING := ["H","e","l","l","o"," ","W","h","a","t","s"," ","y","o","u","r"," ","n","a","m","e","."];//sentence to read
+    currentCharachter : CHAR;//the now charachter processing working on
+    vowelsGroup:STRING := ["a","e","i","o","u"];
+
+    //three counters
+    sentenceLength : INTEGER := 0;//sentence array reader
+    numberOfWords : INTEGER := 0;//start to read charachters when find space add 1 to word counter variable and add 1  to word counter variable in the end when find a dot
+    numberOfVowels : INTEGER := 0;//let the program nows what are vowels and when he found one add 1 to vowels counter
+BEGIN
+WHILE (currentCharachter<>".") DO
+    Read(sentence[sentenceLength]);
+    currentCharachter := sentence[sentenceLength];
+    sentenceLength := sentenceLength + 1;
+IF (currentCharachter=" ") THEN
+    numberOfWords := numberOfWords+1;
+    
+END_IF
+IF (currentCharachter=".") THEN
+    numberOfWords := numberOfWords+1;
+END_IF
+IF (currentCharachter==vowelsGroup[0]) THEN
+    numberOfVowels := numberOfVowels+1;
+END_IF
+IF (currentCharachter==vowelsGroup[1]) THEN
+    numberOfVowels := numberOfVowels+1;
+END_IF
+IF (currentCharachter==vowelsGroup[2]) THEN
+    numberOfVowels := numberOfVowels+1;
+END_IF
+IF (currentCharachter==vowelsGroup[3]) THEN
+    numberOfVowels := numberOfVowels+1;
+END_IF
+IF (currentCharachter==vowelsGroup[4]) THEN
+    numberOfVowels := numberOfVowels+1;
+END_IF    
+END_WHILE
+
+
+Write(sentenceLength);
+Write(numberOfWords);
+Write(numberOfVowels);
+    
+END
