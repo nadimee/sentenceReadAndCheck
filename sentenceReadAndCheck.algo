@@ -1,8 +1,10 @@
 ALGORITHM sentence_read_and_check
 VAR
-    sentence : STRING := ["H","e","l","l","o"," ","W","h","a","t","s"," ","y","o","u","r"," ","n","a","m","e","."];//sentence to read
+    sentence : ARRAY_OF STRING[21]; 
+    sentence := {"H","e","l","l","o"," ","W","h","a","t","s"," ","y","o","u","r"," ","n","a","m","e","."};//sentence to read
     currentCharachter : CHAR;//the now charachter processing working on
-    vowelsGroup:STRING := ["a","e","i","o","u"];
+    sentence : ARRAY_OF STRING[4]; 
+    vowelsGroup := {"a","e","i","o","u"};
 
     //three counters
     sentenceLength : INTEGER := 0;//sentence array reader
@@ -20,19 +22,19 @@ END_IF
 IF (currentCharachter=".") THEN
     numberOfWords := numberOfWords+1;
 END_IF
-IF (currentCharachter==vowelsGroup[0]) THEN
+IF (currentCharachter=vowelsGroup[0]) THEN
     numberOfVowels := numberOfVowels+1;
 END_IF
-IF (currentCharachter==vowelsGroup[1]) THEN
+IF (currentCharachter=vowelsGroup[1]) THEN
     numberOfVowels := numberOfVowels+1;
 END_IF
-IF (currentCharachter==vowelsGroup[2]) THEN
+IF (currentCharachter=vowelsGroup[2]) THEN
     numberOfVowels := numberOfVowels+1;
 END_IF
-IF (currentCharachter==vowelsGroup[3]) THEN
+IF (currentCharachter=vowelsGroup[3]) THEN
     numberOfVowels := numberOfVowels+1;
 END_IF
-IF (currentCharachter==vowelsGroup[4]) THEN
+IF (currentCharachter=vowelsGroup[4]) THEN
     numberOfVowels := numberOfVowels+1;
 END_IF    
 END_WHILE
